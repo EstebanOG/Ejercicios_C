@@ -13,22 +13,18 @@ int a,b;
 const int Nfilas =3;
 const int Ncol =4;
 int numeros[filas][columnas];
-for (int x=0;x<filas;x++) //Recorre la fila deportista
-		{
-			for (int y=0;y<columnas;y++) //Recorre la columna tiempos
-				{
-					cout<<"Ingrese el vector ["<<x<<"]["<<y<<"]"<<endl;
-					cin>>numeros[x][y];
-				}
-		}
+for (int x=0;x<filas;x++){ //Recorre la fila deportista
+	for (int y=0;y<columnas;y++){ //Recorre la columna tiempos
+		cout<<"Ingrese el vector ["<<x<<"]["<<y<<"]"<<endl;
+		cin>>numeros[x][y];
+	}
+}
 for (int x=0;x<filas;x++){ //Recorre la fila deportista
 	for (int y=0;y<columnas;y++){ //Recorre la columna tiempos
 		cout<<numeros[x][y];
 	}
 	cout<<"\n";
 }
-		
-multiplos(numeros,a,b);
 cout<<"ingrese dos numeros para saber el numero de multiplos"<<endl;
 cin>>a>>b;
 cout<<"el numero de digitos multiplos son:  "<<multiplos(numeros, a , b)<<endl;
