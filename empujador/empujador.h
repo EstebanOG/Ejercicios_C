@@ -5,10 +5,12 @@
 #include <stdlib.h>
 #include <iostream>
 #include <time.h>
+#include <fstream>
 using namespace std;
 void pinicial(char tablero[5][5])
 {
 	srand(time(NULL));
+	FILE *movimientos = fopen("Movimientos.txt","w");
 	for(int i = 0; i<5; i++){ //Se crea tablero vacío
 		for(int j = 0; j<5;j++){
 			tablero[i][j]='-';
@@ -46,7 +48,17 @@ void imprime(char tablero[5][5]){
 }
 
 void imprimeenarchivo(char tablero[5][5]){
-	//Imprimer el tablero en archivo .txt
+	FILE *movimientos;
+	movimientos = fopen("Movimientos.txt","a");
+	for(int i = 0; i<5; i++){ 
+		for(int j = 0; j<5;j++){
+			fprintf (movimientos,"%c  ",tablero[i][j]);
+		}
+		fprintf(movimientos,"\n\n");
+		cout<<endl<<endl;
+	}
+	fprintf(movimientos,"\n\n\n");	
+	fclose(movimientos);
 }
 
 void mueve(char tablero[5][5]){
