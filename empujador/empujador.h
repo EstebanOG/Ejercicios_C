@@ -9,8 +9,8 @@
 using namespace std;
 void pinicial(char tablero[4][4])
 {
-	srand(time(NULL));
-	FILE *movimientos = fopen("Movimientos.txt","w");
+	//srand(time(NULL));
+	
 	for(int i = 0; i<5; i++){ //Se crea tablero vacío
 		for(int j = 0; j<5;j++){
 			tablero[i][j]='-';
@@ -37,6 +37,7 @@ void pinicial(char tablero[4][4])
 			cont_obstaculo++;
 		}
 	}while(cont_obstaculo<7);
+	FILE *movimientos = fopen("Movimientos.txt","w");
 }
 
 void imprime(char tablero[4][4]){
@@ -70,12 +71,12 @@ void mueve(char tablero[4][4]){
 	{
 		x=rand()%5; 
 		y=rand()%5; //Escoger una casilla destino a probar
-		cout<<"x"<<x<<" y"<<y<<endl;
+		//cout<<"x"<<x<<" y"<<y<<endl;
 		if(tablero[x+1][y]=='E')//Si el empujador está en la casilla contigua Este de la escogida
 		{
 			if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
 				if(tablero[x-1][y]='O'){
-					cout<<"bloqueado"<<endl;
+					//cout<<"bloqueado"<<endl;
 				}
 				else
 				{	
