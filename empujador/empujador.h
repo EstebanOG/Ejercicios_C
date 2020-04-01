@@ -9,7 +9,7 @@
 using namespace std;
 void pinicial(char tablero[5][5])
 {
-	//srand(time(NULL));
+	srand(time(NULL));
 	
 	for(int i = 0; i<5; i++){ //Se crea tablero vacío
 		for(int j = 0; j<5;j++){
@@ -124,7 +124,7 @@ void mueve(char tablero[5][5]){
 					yamovio=true;
 				}		
 			}else{
-				if(tablero[x+1][y]=='E' && (x!=4))//Si el empujador está en la casilla contigua sur de la escogida
+				if(tablero[x+1][y]=='E')//Si el empujador está en la casilla contigua sur de la escogida
 				{
 					if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
 						if(tablero[x-1][y]=='O'){
@@ -149,7 +149,7 @@ void mueve(char tablero[5][5]){
 						yamovio=true;
 					}		
 				}else{
-					if(tablero[x-1][y]=='E'&&(x!=0))//Si el empujador está en la casilla contigua norte de la escogida
+					if(tablero[x-1][y]=='E')//Si el empujador está en la casilla contigua norte de la escogida
 					{
 						if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
 							if(tablero[x+1][y]=='O'){
