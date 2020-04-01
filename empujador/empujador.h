@@ -61,7 +61,6 @@ void imprimeenarchivo(char tablero[5][5]){
 			fprintf (movimientos,"%c  ",tablero[i][j]);
 		}
 		fprintf(movimientos,"\n\n");
-		cout<<endl<<endl;
 	}
 	fprintf(movimientos,"\n\n\n");	
 	fclose(movimientos);
@@ -75,105 +74,103 @@ void mueve(char tablero[5][5]){
 	{
 		x=rand()%5; 
 		y=rand()%5; //Escoger una casilla destino a probar
-		//cout<<"x"<<x<<" y"<<y<<endl;
-		if(tablero[x+1][y]=='E')//Si el empujador está en la casilla contigua Este de la escogida
+		if(tablero[x][y+1]=='E'&&(y!=4))//Si el empujador está en la casilla contigua Este de la escogida
 		{
 			if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
-				if(tablero[x-1][y]='O'){
-					//cout<<"bloqueado"<<endl;
+				if(tablero[x][y-1]=='O'){
 				}
 				else
 				{	
-					if(x-1>0){//Si la O se puede correr sin salirse
+					if((y-1)>=0){//Si la O se puede correr sin salirse
 						tablero[x][y]='E';//Mueve la E
-						tablero[x+1][y]='-';
-						tablero[x-1][y]='O';//Mueve la O
+						tablero[x][y+1]='-';
+						tablero[x][y-1]='O';//Mueve la O
 						yamovio=true;
 					}else{
 						tablero[x][y]='E';//Mueve la E
-						tablero[x+1][y]='-';
+						tablero[x][y+1]='-';
 						yamovio=true;
 					}
 				}	
 			}else //Si sólo hay vacío '-'
-			{
+			{	
 				tablero[x][y]='E';//Mueve la E
-				tablero[x+1][y]='-';
+				tablero[x][y+1]='-';
 				yamovio=true;
 			}		
 		}else{
-			if(tablero[x-1][y]=='E')//Si el empujador está en la casilla contigua Oeste de la escogida
+			if(tablero[x][y-1]=='E' && (y!=0))//Si el empujador está en la casilla contigua Oeste de la escogida
 			{
 				if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
-					if(tablero[x+1][y]='O'){
+					if(tablero[x][y+1]=='O'){
 					}
 					else
 					{	
-						if(x+1<5){//Si la O se puede correr sin salirse
+						if(y+1<5){//Si la O se puede correr sin salirse
 							tablero[x][y]='E';//Mueve la E
-							tablero[x-1][y]='-';
-							tablero[x+1][y]='O';//Mueve la O
+							tablero[x][y-1]='-';
+							tablero[x][y+1]='O';//Mueve la O
 							yamovio=true;
 						}else{
 							tablero[x][y]='E';//Mueve la E
-							tablero[x-1][y]='-';
+							tablero[x][y-1]='-';
 							yamovio=true;
 						}
 					}	
 				}else //Si sólo hay vacío '-'
 				{
 					tablero[x][y]='E';//Mueve la E
-					tablero[x-1][y]='-';
+					tablero[x][y-1]='-';
 					yamovio=true;
 				}		
 			}else{
-				if(tablero[x][y+1]=='E')//Si el empujador está en la casilla contigua sur de la escogida
+				if(tablero[x+1][y]=='E' && (x!=4))//Si el empujador está en la casilla contigua sur de la escogida
 				{
 					if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
-						if(tablero[x][y-1]='O'){
+						if(tablero[x-1][y]=='O'){
 						}
 						else
 						{	
-							if(y-1>=0){//Si la O se puede correr sin salirse
+							if((x-1)>=0){//Si la O se puede correr sin salirse
 								tablero[x][y]='E';//Mueve la E
-								tablero[x][y+1]='-';
-								tablero[x][y-1]='O';//Mueve la O
+								tablero[x+1][y]='-';
+								tablero[x-1][y]='O';//Mueve la O
 								yamovio=true;
 							}else{
 								tablero[x][y]='E';//Mueve la E
-								tablero[x][y+1]='-';
+								tablero[x+1][y]='-';
 								yamovio=true;
 							}
 						}	
 					}else //Si sólo hay vacío '-'
 					{
 						tablero[x][y]='E';//Mueve la E
-						tablero[x][y+1]='-';
+						tablero[x+1][y]='-';
 						yamovio=true;
 					}		
 				}else{
-					if(tablero[x][y-1]=='E')//Si el empujador está en la casilla contigua norte de la escogida
+					if(tablero[x-1][y]=='E'&&(x!=0))//Si el empujador está en la casilla contigua norte de la escogida
 					{
 						if(tablero[x][y]=='O'){//si hay una O en la casilla esogida
-							if(tablero[x][y+1]='O'){
+							if(tablero[x+1][y]=='O'){
 							}
 							else
 							{	
-								if(y+1<4){//Si la O se puede correr sin salirse
+								if(x+1<5){//Si la O se puede correr sin salirse
 									tablero[x][y]='E';//Mueve la E
-									tablero[x][y-1]='-';
-									tablero[x][y+1]='O';//Mueve la O
+									tablero[x-1][y]='-';
+									tablero[x+1][y]='O';//Mueve la O
 									yamovio=true;
 								}else{
 									tablero[x][y]='E';//Mueve la E
-									tablero[x][y-1]='-';
+									tablero[x-1][y]='-';
 									yamovio=true;
 								}
 							}	
 						}else //Si sólo hay vacío '-'
 						{
 							tablero[x][y]='E';//Mueve la E
-							tablero[x][y-1]='-';
+							tablero[x-1][y]='-';
 							yamovio=true;
 						}				
 					}else{

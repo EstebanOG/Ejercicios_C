@@ -15,7 +15,6 @@ int main()
 			mueve(corre);
 			imprime(corre);
 			imprimeenarchivo(corre);
-			cout<<endl;
 		}
 	}while(verifica(corre)==true && (toascii(entrada_teclado)!=27));
 	
