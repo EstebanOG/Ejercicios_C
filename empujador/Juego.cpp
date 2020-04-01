@@ -4,12 +4,11 @@
 using namespace std;
 int main()
 {	int a=5,b=5;
-	char corre [5][5];
+	char corre [4][4];
 	char entrada_teclado;
 	pinicial(corre);
 	imprime(corre);
 	imprimeenarchivo(corre);
-	cout<<endl;
 	do{ 
 		entrada_teclado = getch();
 		if(toascii(entrada_teclado)==13){
