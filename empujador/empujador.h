@@ -7,7 +7,7 @@
 #include <time.h>
 #include <fstream>
 using namespace std;
-void pinicial(char tablero[4][4])
+void pinicial(char tablero[5][5])
 {
 	//srand(time(NULL));
 	
@@ -40,8 +40,10 @@ void pinicial(char tablero[4][4])
 	FILE *movimientos = fopen("Movimientos.txt","w");
 }
 
-void imprime(char tablero[4][4]){
+void imprime(char tablero[5][5]){
+	cout<<"   0   1   2   3   4"<<endl;
 	for(int i = 0; i<5; i++){ 
+		cout<<i<<"  ";
 		for(int j = 0; j<5;j++){
 			cout<< tablero[i][j]<<"   ";
 		}
@@ -49,10 +51,12 @@ void imprime(char tablero[4][4]){
 	}		
 }
 
-void imprimeenarchivo(char tablero[4][4]){
+void imprimeenarchivo(char tablero[5][5]){
 	FILE *movimientos;
 	movimientos = fopen("Movimientos.txt","a");
+	fprintf(movimientos,"   0  1  2  3  4\n");
 	for(int i = 0; i<5; i++){ 
+		fprintf(movimientos,"%d  ",i);
 		for(int j = 0; j<5;j++){
 			fprintf (movimientos,"%c  ",tablero[i][j]);
 		}
@@ -63,7 +67,7 @@ void imprimeenarchivo(char tablero[4][4]){
 	fclose(movimientos);
 }
 
-void mueve(char tablero[4][4]){
+void mueve(char tablero[5][5]){
 	bool yamovio=false;
 	int x=0;
 	int y=0;
@@ -182,7 +186,7 @@ void mueve(char tablero[4][4]){
 //verificar si E está en alguna de las otras tres casilla contiguas [x][y+1],[x-1][y],[x][y-1] y mover, o escoger otra casilla
 }
 
-bool verifica(char tablero[4][4]){
+bool verifica(char tablero[5][5]){
 	int obstaculos = 0;
 	for(int i = 0; i<5; i++){ 
 		for(int j = 0; j<5;j++){

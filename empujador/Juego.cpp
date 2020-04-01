@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {	int a=5,b=5;
-	char corre [4][4];
+	char corre [5][5];
 	char entrada_teclado;
 	pinicial(corre);
 	imprime(corre);
@@ -18,6 +18,8 @@ int main()
 			cout<<endl;
 		}
 	}while(verifica(corre)==true && (toascii(entrada_teclado)!=27));
+	
+	cout<<"Se termina el juego";
 }
 
 
