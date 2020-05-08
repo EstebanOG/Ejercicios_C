@@ -14,8 +14,7 @@ void leerDatos(float& bMenor, float& bMayor, float& h)//Se leen datos
 void calculos(float bMenor, float bMayor, float h, float& area, float& perimetro, float& lado)
 {
 	area=(h*((bMenor+bMayor)/2));
-	//lado= sqrt((pow()));
-	lado = 10;	
+	lado= sqrt(pow(((bMayor-bMenor)/2),2)+pow(h,2));
 	perimetro= bMenor+ bMayor + (2*lado);
 
 }
