@@ -1,11 +1,9 @@
-#include <iostream>
+#include "Trapecio.h"
 
 using namespace std;
-void leerDatos();
-void calcularArea();
-void calcularPerimetro();
-void calcularLado();
+
 int main(int argc, char** argv) {
-	int baseMayor, baseMenor, altura;
+	float bMayor, bMenor, h;
+	leerDatos(bMayor, bMenor, h);
 	return 0;
 }
