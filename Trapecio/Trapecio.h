@@ -10,6 +10,10 @@ void leerDatos(float& bMenor, float& bMayor, float& h)//Se leen datos
 	cin>>bMayor;
 	cout<<"Ingrese la altura: ";
 	cin>>h;
+	while(h<1){
+		cout<<"Ingrese la altura: ";
+		cin>>h;
+	}
 }
 void calculos(float bMenor, float bMayor, float h, float& area, float& perimetro, float& lado)
 {
