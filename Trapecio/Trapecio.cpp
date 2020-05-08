@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-	float bMayor, bMenor, h;
+	float bMayor, bMenor, h, area, perimetro, lado;
 	leerDatos(bMayor, bMenor, h);
+	calculos(bMayor, bMenor, h, area,perimetro,lado)
 	return 0;
 }
