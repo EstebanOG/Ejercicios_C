@@ -6,8 +6,16 @@ void leerDatos(float& bMenor, float& bMayor, float& h)//Se leen datos
 {
 	cout<<"Ingrese la base menor: ";
 	cin>>bMenor;
+	while(bMenor<1){
+		cout<<"Ingrese la base menor: ";
+		cin>>bMenor;
+	}
 	cout<<"Ingrese la base mayor: ";
 	cin>>bMayor;
+	while(bMayor<1 || bMayor<bMenor){
+		cout<<"Ingrese la base mayor: ";
+		cin>>bMayor;
+	}
 	cout<<"Ingrese la altura: ";
 	cin>>h;
 	while(h<1){
