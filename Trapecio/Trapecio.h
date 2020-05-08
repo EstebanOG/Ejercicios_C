@@ -14,7 +14,14 @@ void leerDatos(float& bMenor, float& bMayor, float& h)//Se leen datos
 void calculos(float bMenor, float bMayor, float h, float& area, float& perimetro, float& lado)
 {
 	area=(h*((bMenor+bMayor)/2));
-	#lado= sqrt((pow()));	
-	perimero= bMenor+ bMayor + (2*lado);
+	//lado= sqrt((pow()));
+	lado = 10;	
+	perimetro= bMenor+ bMayor + (2*lado);
 
+}
+void mostrarResultados(float area, float perimetro, float lado)
+{
+	cout<<"El area del trapecio es: "<<area<<endl;
+	cout<<"El perimetro del trapecio es: "<<perimetro<<endl;
+	cout<<"El lado del trapecio es: "<<lado<<endl;	
 }
