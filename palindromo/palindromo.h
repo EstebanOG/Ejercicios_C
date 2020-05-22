@@ -6,7 +6,7 @@
 using namespace std;
 void leerTexto(string& texto);
 void normalizar(string texto,string& textoNormalizado);
-void contadorDePalabras(string texto, int& contadorDePalabras);
+void contadorDePalabras(string textoNormalizado, int& contadorDePalabras);
 void memoriaDerecho(string*& palabrasAlDerecho, int contador);
 void formarPalabrasAlDerecho(string* palabrasAlDerecho, string textoNormalizado);
 void memoriaReves(string*& palabraAlReves, int contador);

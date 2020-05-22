@@ -23,16 +23,16 @@ void normalizar(string texto, string& textoNormalizado){
 	}
 	textoNormalizado = texto;
 }
-void contadorDePalabras(string texto, int& contadorDePalabras)
+void contadorDePalabras(string textoNormalizado, int& contadorDePalabras)
 {
 	int i = 0;
-	int longitud = (int) texto.length();
+	int longitud = (int) textoNormalizado.length();
 	while (i < longitud)
 	{
-		while (i < longitud && texto[i] = ' ')
+		while (i < longitud && textoNormalizado[i] == ' ')
 			i++;
 		contadorDePalabras++;
-		while (i < longitud && texto[i] != ' ')i++; 
+		while (i < longitud && textoNormalizado[i] != ' ')i++; 
 	}
 }
 void memoriaDerecho(string*& palabrasDerecho, int contador)
@@ -63,7 +63,7 @@ void memoriaReves(string*& palabrasAlReves, int contador)
 	assert(palabrasAlReves != NULL);
 }
 
-void formarPalabrasAlReves(string*& palabrasAlreves, string* palabrasAlDerecho, int contador)
+void formarPalabrasAlReves(string*& palabrasAlReves, string* palabrasAlDerecho, int contador)
 {
 	string r;
 	int longitud;
@@ -84,7 +84,7 @@ void contadorPalindromo(string* palabraAlDerecho, string* palabraAlReves, int co
 		if(palabraAlDerecho[i]== palabraAlReves[i]){
 			contadorPalindromo++;
 		}
-		i++
+		i++;
 	}
 }
 /*void memoria( palindromos, contadorPalindromos){

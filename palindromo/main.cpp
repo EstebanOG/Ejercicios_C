@@ -11,7 +11,7 @@ int main()
     int contador, contadorPalindromos;
     leerTexto(texto);
     normalizar(texto, textoNormalizado);
-    contadorDePalabras(texto,contador);
+    contadorDePalabras(textoNormalizado,contador);
     memoriaDerecho(palabrasAlDerecho, contador);
     formarPalabrasAlDerecho( palabrasAlDerecho, textoNormalizado);
     memoriaReves(palabrasAlReves, contador);
