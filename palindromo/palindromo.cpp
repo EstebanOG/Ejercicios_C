@@ -1,30 +1,54 @@
-#include "palindromo.h"
-
-int main()
+void leerTexto(string& texto)
 {
-    setlocale(LC_ALL, "spanish");
-    string texto;
-    string* palabrasAlDerecho;
-    string* palabrasAlReves;
-    string* palindromos;
-    int contador, contadorPalindromos;
-    leerTexto(texto);
-    contador=contadorDePalabras(texto);
-    memoria(palabrasAlDerecho, contador);
-    formarPalabrasAlDerecho( palabrasAlDerecho, texto);
-    memoria(palabrasAlReves, contador);
-    formarPalabrasAlReves(palabrasAlDerecho, palabrasAlReves, contador);
-    //
-    contadorPalindromos = contarPalindromos(palabrasAlDerecho, palabrasAlReves, contadorPalindromos);
-    memoria( palindromos, contadorPalindromos);
-    crearArregloDePalindromos(palindromos, palabrasAlDerecho, formarPalabrasAlReves, contador);
-    print(texto);
-    print(palabrasAlDerecho, contador);
-    print(palindromos, contadorPalindromos);
-    liberarMemoria(palabrasAlDerecho);
-    liberarMemoria(palabrasAlReves);
-    liberarMemoria(palindromos);
+	cout << "ingrese el texto \n";
+	getline(cin, texto);
+	normalizar(texto);
+} 
+int contadorDePalabras(string& texto)
+{
+	int i = 0, contadorDePalabras = 0;
+	int longitud = (int)texto.length();
+	while (i < longitud)
+	{
+		while (i < longitud && texto[i] != ' ')i++; contadorDePalabras++;
 
-    system("pause");
-    
+		while (i < longitud && texto[i] == ' ')i++; contadorDePalabras++;
+	}
+	return contadorDePalabras;
+}
+void memoria(string* &palabras, int contador)
+{
+	assert(contador > 0);
+	palabras = new string[contador];
+	assert(palabras != NULL);
+}
+
+void formarPalabrasAlDerecho(string* palabrasAlDerecho, string texto)
+{
+	int i = 0, j = 0;
+	int longitud = (int)texto.length();
+	while (i < longitud)
+	{
+		while (i < longitud && texto[i] != ' ') {
+		
+			palabrasAlDerecho[j] += texto[i];	i++;
+		}
+		j++;
+		while (i < longitud && texto[i] == ' ')i++; 
+	}
+	
+}
+
+void formarPalabrasAlReves(string* palabrasAlDerecho, string* palabrasAlReves, int contador)
+{
+	for (int i = 0; i < contador; i++)
+	{
+		int longitud = (int)palabrasAlDerecho[i].length();
+		for (int k = longitud; k >= 0; k--)
+			palabrasAlReves[i] += palabrasAlReves[i][k];
+	}
+	for (int i = 0; i < contador ; i++)
+		cout << palabrasAlReves[i] << endl;
+		system("pause");
+
 }
