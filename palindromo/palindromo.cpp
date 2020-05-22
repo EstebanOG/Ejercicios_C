@@ -9,19 +9,17 @@ void leerTexto(string& texto)
 int contadorDePalabras(string& texto)
 {
 	int i = 0, contadorDePalabras = 0;
-	int longitud = (int)texto.length();
-	cout<<longitud<<endl;
+	int longitud = texto.length();
 	while (i < longitud)
 	{
 		//while (i < longitud && texto[i] != ' ')i++; contadorDePalabras++;
-		cout<<texto[i]<<endl;
-		while (i < longitud && texto[i] == ' ')
+		if (texto[i] == ' ')
 		{
 			contadorDePalabras++; 
 		}
 		i++; 
 	}
-	return contadorDePalabras;
+	return contadorDePalabras+1;
 }
 /*void memoria(string* &palabras, int contador)
 {
