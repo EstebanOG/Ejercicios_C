@@ -4,22 +4,20 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "spanish");
-    string texto;
+    string texto, textoNormalizado;
     string* palabrasAlDerecho;
     string* palabrasAlReves;
     string* palindromos;
     int contador, contadorPalindromos;
     leerTexto(texto);
-    contador=contadorDePalabras(texto);
-    cout<<contador<<endl;
-    /*memoria(palabrasAlDerecho, contador);
-    formarPalabrasAlDerecho( palabrasAlDerecho, texto);
-    memoria(palabrasAlReves, contador);
-    formarPalabrasAlReves(palabrasAlDerecho, palabrasAlReves, contador);
-    //
-    contadorPalindromos = contarPalindromos(palabrasAlDerecho, palabrasAlReves, contadorPalindromos);
-    memoria( palindromos, contadorPalindromos);
+    normalizar(texto, textoNormalizado);
+    contadorDePalabras(texto,contador);
+    memoriaDerecho(palabrasAlDerecho, contador);
+    formarPalabrasAlDerecho( palabrasAlDerecho, textoNormalizado);
+    memoriaReves(palabrasAlReves, contador);
+    formarPalabrasAlReves(palabrasAlReves, palabrasAlDerecho, contador);
+	contarPalindromos(palabrasAlDerecho, palabrasAlReves, contador, contadorPalindromos);
+    /*memoria( palindromos, contadorPalindromos);
     crearArregloDePalindromos(palindromos, palabrasAlDerecho, formarPalabrasAlReves, contador);
     print(texto);
     print(palabrasAlDerecho, contador);
@@ -31,3 +29,17 @@ int main()
     system("pause");
     
 }
+
+
+//
+//
+//string Mayus = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+//string Minus = "abcdefghijklmnñopqrstuvwxyz";
+//for (int i = 0; i < (int)texto.length(); i++) {
+   // for (int j = 0; j < (int)Mayus.length(); j++) {
+      //  if (Mayus[j] == texto[i])
+           // texto[i] = Minus[j];
+   // }
+    //for (int j = 0; j < 10; j++) {
+       // if ((char)codigos[j] == texto[i])
+        //    texto[i] = codigosnorm[j];
