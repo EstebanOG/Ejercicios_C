@@ -2,6 +2,7 @@
 #include<iostream>
 #include <cassert>
 #include<string>
+#include "palindromo.cpp"
 using namespace std;
 void leerTexto(string& texto);
 int contadorDePalabras(string& texto);

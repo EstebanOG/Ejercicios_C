@@ -1,8 +1,10 @@
+#include <iostream>
+using namespace std;
 void leerTexto(string& texto)
 {
 	cout << "ingrese el texto \n";
 	getline(cin, texto);
-	normalizar(texto);
+	//normalizar(texto);
 } 
 int contadorDePalabras(string& texto)
 {
@@ -16,12 +18,12 @@ int contadorDePalabras(string& texto)
 	}
 	return contadorDePalabras;
 }
-void memoria(string* &palabras, int contador)
+/*void memoria(string* &palabras, int contador)
 {
 	assert(contador > 0);
 	palabras = new string[contador];
 	assert(palabras != NULL);
-}
+}*/
 
 void formarPalabrasAlDerecho(string* palabrasAlDerecho, string texto)
 {

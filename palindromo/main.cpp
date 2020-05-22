@@ -11,7 +11,7 @@ int main()
     string* palindromos;
     int contador, contadorPalindromos;
     leerTexto(texto);
-    contador=contadorDePalabras(texto);
+    /*contador=contadorDePalabras(texto);
     memoria(palabrasAlDerecho, contador);
     formarPalabrasAlDerecho( palabrasAlDerecho, texto);
     memoria(palabrasAlReves, contador);
@@ -25,7 +25,7 @@ int main()
     print(palindromos, contadorPalindromos);
     liberarMemoria(palabrasAlDerecho);
     liberarMemoria(palabrasAlReves);
-    liberarMemoria(palindromos);
+    liberarMemoria(palindromos);*/
 
     system("pause");
     
