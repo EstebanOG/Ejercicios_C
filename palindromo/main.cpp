@@ -1,7 +1,5 @@
 #include "palindromo.h"
 
-using namespace std;
-
 int main()
 {
     string texto, textoNormalizado;
@@ -17,7 +15,9 @@ int main()
     memoriaReves(palabrasAlReves, contador);
     formarPalabrasAlReves(palabrasAlReves, palabrasAlDerecho, contador);
 	contarPalindromos(palabrasAlDerecho, palabrasAlReves, contador, contadorPalindromos);
-    /*memoria( palindromos, contadorPalindromos);
+    memoriaPalindromos( palindromos, contadorPalindromos);
+    printTexto(texto);
+    /*
     crearArregloDePalindromos(palindromos, palabrasAlDerecho, formarPalabrasAlReves, contador);
     print(texto);
     print(palabrasAlDerecho, contador);

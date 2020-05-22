@@ -1,5 +1,6 @@
-#include <iostream>
+#include "palindromo.h"
 #include <assert.h> 
+#include<iostream>
 using namespace std;
 void leerTexto(string& texto)
 {
@@ -78,7 +79,7 @@ void formarPalabrasAlReves(string*& palabrasAlReves, string* palabrasAlDerecho, 
 	}
 
 }
-void contadorPalindromo(string* palabraAlDerecho, string* palabraAlReves, int contador, int& contadorPalindromo){
+void contarPalindromos(string* palabraAlDerecho, string* palabraAlReves, int contador, int& contadorPalindromo){
 	int i=0;
 	while(contador>i){
 		if(palabraAlDerecho[i]== palabraAlReves[i]){
@@ -87,9 +88,16 @@ void contadorPalindromo(string* palabraAlDerecho, string* palabraAlReves, int co
 		i++;
 	}
 }
-/*void memoria( palindromos, contadorPalindromos){
-	
+void memoriaPalindromos(string*& palindromos, int contadorPalindromo){
+	if(contadorPalindromo >= 1){
+		palindromos = new string[contadorPalindromo];
+		assert(palindromos != NULL);
+	}
 }
+void printTexto(string texto){
+	cout<<"El texto ingresado es: "<<texto<<endl;
+}
+/*
 void crearArregloDePalindromos(palindromos, palabrasAlDerecho, formarPalabrasAlReves, contador){
 	
 }
