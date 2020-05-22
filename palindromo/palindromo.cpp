@@ -106,25 +106,28 @@ void printPalabrasAlDerecho(string*& palabrasAlDerecho,  int contador){
 	}
 	cout<<endl;
 }
-/*
-void crearArregloDePalindromos(palindromos, palabrasAlDerecho, formarPalabrasAlReves, contador){
-	
+void printPalabrasAlReves(string*& palabrasAlReves,  int contador){
+	cout<<"Las palablas al reves son: ";
+	for(int i = 0; i<contador;i++){
+		
+		cout<<" "<<palabrasAlReves[i];
+	}
+	cout<<endl;
 }
-void print(texto){
-	
+void printPalindromos(string*& palindromos,  int contadorPalindromos){
+	cout<<"Los palindromos son: ";
+	for(int i = 0; i<contadorPalindromos;i++){
+		
+		cout<<" "<<palindromos[i];
+	}
+	cout<<endl;
 }
-void print(palabrasAlDerecho, contador){
-	
+void liberarMemoriaDerecho(string*& palabrasAlDerecho){
+	delete[] palabrasAlDerecho;
 }
-void print(palindromos, contadorPalindromos){
-	
+void liberarMemoriaReves(string*& palabrasAlReves){
+	delete[]  palabrasAlReves;
 }
-void liberarMemoria(palabrasAlDerecho){
-	
+void liberarMemoriaPalindromo(string*& palindromos){
+	delete[]  palindromos;
 }
-void liberarMemoria(palabrasAlReves){
-	
-}
-void liberarMemoria(palindromos){
-	
-}*/
