@@ -15,8 +15,8 @@ void memoriaReves(string*& palabraAlReves, int contador);
 void formarPalabrasAlReves(string*& palabrasAlReves, string* palabrasAlDerecho, int contador);
 void contarPalindromos(string* palabraAlDerecho, string* palabraAlReves, int contador, int& contadorPalindromo);
 void memoriaPalindromos(string*& palindromos,int contadorPalindromo);
-void printTexto(string texto);
-
+void printTexto(string texto, int contador);
+void printPalabrasAlDerecho(string*& palabrasAlDerecho, int contador);
 /*void print(palabrasAlDerecho, contador);
 void print(palindromos, contadorPalindromos);
 void liberarMemoria(palabrasAlDerecho);
