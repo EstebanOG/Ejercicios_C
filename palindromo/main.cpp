@@ -16,6 +16,7 @@ int main()
     formarPalabrasAlReves(palabrasAlReves, palabrasAlDerecho, contador);
 	contarPalindromos(palabrasAlDerecho, palabrasAlReves, contador, contadorPalindromos);
     memoriaPalindromos( palindromos, contadorPalindromos);
+    palindromos(palabrasAlDerecho,palabrasAlReves,palindromos,contador, contadorPalindromos);
     printTexto(texto, contador);
     printPalabrasAlDerecho(palabrasAlDerecho, contador);
     printPalabrasAlReves(palabrasAlReves, contador);

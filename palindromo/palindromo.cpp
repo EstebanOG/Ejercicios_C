@@ -94,6 +94,11 @@ void memoriaPalindromos(string*& palindromos, int contadorPalindromo){
 		assert(palindromos != NULL);
 	}
 }
+void palindromos(string* palabrasAlDerecho,string* palabrasAlReves,string*& palindromos, int contador,int contadorPalindromos){
+	//
+	//
+	//
+}
 void printTexto(string texto, int contador){
 	cout<<"El texto ingresado es: "<<texto<<endl;
 	cout<<"Total de palabras: "<<contador<<endl;
