@@ -10,11 +10,16 @@ int contadorDePalabras(string& texto)
 {
 	int i = 0, contadorDePalabras = 0;
 	int longitud = (int)texto.length();
+	cout<<longitud<<endl;
 	while (i < longitud)
 	{
-		while (i < longitud && texto[i] != ' ')i++; contadorDePalabras++;
-
-		while (i < longitud && texto[i] == ' ')i++; contadorDePalabras++;
+		//while (i < longitud && texto[i] != ' ')i++; contadorDePalabras++;
+		cout<<texto[i]<<endl;
+		while (i < longitud && texto[i] == ' ')
+		{
+			contadorDePalabras++; 
+		}
+		i++; 
 	}
 	return contadorDePalabras;
 }

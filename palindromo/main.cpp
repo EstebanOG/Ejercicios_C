@@ -11,8 +11,9 @@ int main()
     string* palindromos;
     int contador, contadorPalindromos;
     leerTexto(texto);
-    /*contador=contadorDePalabras(texto);
-    memoria(palabrasAlDerecho, contador);
+    contador=contadorDePalabras(texto);
+    cout<<contador<<endl;
+    /*memoria(palabrasAlDerecho, contador);
     formarPalabrasAlDerecho( palabrasAlDerecho, texto);
     memoria(palabrasAlReves, contador);
     formarPalabrasAlReves(palabrasAlDerecho, palabrasAlReves, contador);
