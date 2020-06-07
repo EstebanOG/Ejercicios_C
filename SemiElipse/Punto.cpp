@@ -32,3 +32,4 @@ void Punto::SetsuY(float x)
 	suY = x;
 }
 
+

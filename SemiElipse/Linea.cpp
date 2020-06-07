@@ -1,3 +1,4 @@
+#include <winbgim.h>
 #include "Linea.h"
 
 Linea::Linea()
@@ -30,6 +31,11 @@ Punto Linea::GetsuPfin()
 void Linea::SetsuPfin(Punto x)
 {
 	suPfin = x;
+}
+
+void Linea::Dibujar()
+{
+	line(suPini.GetsuX(),suPini.GetsuY(),suPfin.GetsuX(),suPfin.GetsuY());
 }
 
 

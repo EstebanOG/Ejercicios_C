@@ -17,6 +17,7 @@ class FiguraOcho
 		float CalcularArea();
 		float CalcularLongitudArco();
 		float CalcularLongitudLinea();
+		void Dibujar();
 	private:
 		Punto suP;
 		Linea suLinea;
@@ -25,4 +26,5 @@ class FiguraOcho
 };
 
 #endif
+
 

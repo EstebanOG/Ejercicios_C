@@ -1,3 +1,4 @@
+#include <winbgim.h>
 #include "Arco.h"
 
 Arco::Arco()
@@ -43,3 +44,7 @@ void Arco::SetsuRadioMenor(float x)
 	suRadioMenor = x;
 }
 
+void Arco::Dibujar()
+{
+	ellipse(suCentro.GetsuX(),suCentro.GetsuY(),270, 90, suRadioMayor, suRadioMenor);
+}

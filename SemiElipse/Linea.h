@@ -11,6 +11,7 @@ class Linea
 		Punto GetsuPini(); // returns the value of suPini
 		void SetsuPfin(Punto x); // sets the value of suPfin
 		Punto GetsuPfin(); // returns the value of suPfin
+		void Dibujar();
 	private:
 		Punto suPini;
 		Punto suPfin;
@@ -18,4 +19,5 @@ class Linea
 };
 
 #endif
+
 

@@ -59,3 +59,10 @@ float FiguraOcho::CalcularLongitudLinea()
 	return suLinea.GetsuPini().GetsuY() - suLinea.GetsuPfin().GetsuY();
 }
 
+void FiguraOcho::Dibujar()
+{
+	suLinea.Dibujar();
+	suArco.Dibujar();
+}
+
+

@@ -1,12 +1,18 @@
 #include <iostream>
-using namespace std;
+#include <winbgim.h>
 #include "Punto.h"
 #include "FiguraOcho.h"
 #include "Arco.h"
 #include "Linea.h"
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+void waitForLeftMouseClick();
+
+using namespace std;
+
 
 int main(int argc, char** argv) {
+	initwindow(800,600);
 	Punto P;
 	int x, y;
 	float radioMayor, radioMenor;
@@ -45,5 +51,21 @@ int main(int argc, char** argv) {
 	cout << "El area de la figura es: " << Fig1.CalcularArea() << endl;
 	cout << "La longitud del arco es: "<<Fig1.CalcularLongitudArco()<<endl;
 	cout << "La longitud de la linea es: "<<Fig1.CalcularLongitudLinea()<<endl;
+	Fig1.Dibujar();
+	
+	waitForLeftMouseClick();
+	
+	closegraph();
 	return 0;
 }
+
+void waitForLeftMouseClick()
+{
+    clearmouseclick(WM_LBUTTONDOWN);
+    const int DELAY = 50; // Milliseconds of delay between checks
+    int x, y;
+    while (!ismouseclick(WM_LBUTTONDOWN))
+        delay(DELAY);
+    getmouseclick(WM_LBUTTONDOWN, x, y);
+}
+

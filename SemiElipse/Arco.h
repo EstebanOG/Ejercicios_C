@@ -13,6 +13,7 @@ class Arco
 		float GetsuRadioMayor(); // returns the value of suRadio
 		void SetsuRadioMenor(float x); // sets the value of suRadio
 		float GetsuRadioMenor(); // returns the value of suRadio
+		void Dibujar();
 	private:
 		Punto suCentro;
 		float suRadioMayor;
