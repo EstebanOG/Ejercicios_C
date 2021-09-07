@@ -2,104 +2,110 @@
 #include <winbgim.h>
 #include "CAFEMILEX.h"
 
+//	Universidad Distrital Francisco Jose De Caldas.
+//	Programacion Orientada a Objetos
+//
+//
 void waitForLeftMouseClick();
-
 using namespace std;
-
-
 int main(int argc, char** argv) {
-	initwindow(1000,2300);
-	int opc;
-	CAFEMILEX producto;
-	int ventas = 0;
-	int otro = 0;
-	bool seguir = true;
-	int llenar=0;
-	while(seguir == true){
-		cout<<"LO NUESTRO Inc."<<endl;
-		cout<<"Menu:"<<endl;
-		cout<<"Codigo		Producto	Tamanio(vaso)	Valor"<<endl;
-		cout<<"1.		Tinto		4 onzas		1500"<<endl;
-		cout<<"2.		Tinto		8 onzas		3000"<<endl;
-		cout<<"3.		Perico		4 onzas		1800"<<endl;
-		cout<<"4.		Perico		8 onzas		3600"<<endl;
-		cout<<"5.		Milo		4 onzas		1800"<<endl;
-		cout<<"6.		Milo		8 onzas		3600"<<endl;
-		cout<<"Ingrese una opcion: ";
-		cin>>opc;
-		cout<<endl;
-		cout<<"Sirviendo producto..."<<endl;
-		switch(opc)
-		{
-	    case 1:
-	    	ventas = ventas + 1500;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(1,1);
-	    	cout<<endl;
-	    	cout<<"Precio: 1500"<<endl<<endl;
-	    break;
-	    case 2:
-	    	ventas = ventas + 3000;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(1,2);
-	    	cout<<endl;
-	    	cout<<"Precio: 3000"<<endl<<endl;
-	    break;
-	    case 3:
-	    	ventas = ventas + 1800;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(2,1);
-	    	cout<<endl;
-	    	cout<<"Precio: 1800"<<endl<<endl;
-	    break;
-	    case 4:
-	    	ventas = ventas + 3600;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(2,2);
-	    	cout<<endl;
-	    	cout<<"Precio: 3600"<<endl<<endl;
-	    break;
-	    case 5:
-	    	ventas = ventas + 1800;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(3,1);
-	    	cout<<endl;
-	    	cout<<"Precio: 1800"<<endl<<endl;
-	    break;
-	    case 6:
-	    	ventas = ventas + 3600;
-	    	cout<<"Ingredientes:"<<endl;
-	    	producto.servirVaso(3,2);
-	    	cout<<endl;
-	    	cout<<"Precio: 3600"<<endl<<endl;
-	    break;
-	    default:
-	    	return 0;
+    initwindow(1000,2300);
+	CAFEMILEX miCafetera;
+	miCafetera=CAFEMILEX();
+	int opcion=1,tipo,cantidad;
+	miCafetera.dibujarNivel();
+	while(opcion!=0){
+		system("cls");
+		cout<<"____________ ESTADO ____________"<<endl;
+		cout<<"Agua: Actual:"<<miCafetera.getCantidadActualAgua()<<"L | Maximo: "<<miCafetera.getCapacidadMaximaAgua()<<"L"<<endl;
+		cout<<"Leche: Actual:"<<miCafetera.getCantidadActualLeche()<<"L | Maximo: "<<miCafetera.getCapacidadMaximaLeche()<<"L"<<endl;
+		cout<<"Cafe: Actual:"<<miCafetera.getCantidadActualCafe()<<"g | Maximo: "<<miCafetera.getCapacidadMaximaCafe()<<"g"<<endl;
+		cout<<"Milo: Actual:"<<miCafetera.getCantidadActualMilo()<<"g | Maximo: "<<miCafetera.getCapacidadMaximaMilo()<<"g"<<endl;
+		cout<<"Ventas Acumuladas: $"<<miCafetera.getVentasAcumuladas()<<endl;
+		cout<<"________________________________"<<endl<<endl;
+		cout<<"Menu Principal"<<endl;
+		cout<<"Ingrese el numero correspondiente: "<<endl;
+		cout<<"1. Servir taza"<<endl;
+		cout<<"2. Llenar Agua"<<endl;
+		cout<<"3. Llenar Leche"<<endl;
+		cout<<"4. Llenar Cafe"<<endl;
+		cout<<"5. Llenar Milo"<<endl;
+		cout<<"0. Salir."<<endl;
+		cin>>opcion;
+		switch (opcion){
+			case 1:
+				system("cls");
+				cout<<"Menu Servir"<<endl;
+				cout<<"Ingrese el numero correspondiente: "<<endl;
+				cout<<"1. Servir tinto"<<endl;
+				cout<<"2. Servir perico"<<endl;
+				cout<<"3. Servir milo"<<endl;
+				cin>>tipo;
+				while(tipo<0 || tipo>3){
+					cout<<"Ingrese un numero valido"<<endl;
+					cin>>tipo;
+				}
+				cout<<"Ingrese el numero correspondiente: "<<endl;
+				cout<<"1. Vaso de 4 onzas"<<endl;
+				cout<<"2. Vaso de 8 onzas"<<endl;
+				cin>>cantidad;
+				while(cantidad<0 || cantidad>2){
+					cout<<"Ingrese un numero valido"<<endl;
+					cin>>cantidad;
+				}
+				if(tipo==1){
+					if(miCafetera.servirTinto(cantidad)){
+						cout<<"Se sirvio Tinto con las medidas correctas."<<endl;
+					}else{
+						cout<<"Se sirvio Tinto con las medidas incorrectas debido a escasez de producto."<<endl;
+					}
+				}
+				if(tipo==2){
+					if(miCafetera.servirPerico(cantidad)){
+						cout<<"Se sirvio Perico con las medidas correctas."<<endl;
+					}else{
+						cout<<"Se sirvio Perico con las medidas incorrectas debido a escasez de producto."<<endl;
+					}
+				}
+
+				if(tipo==3){
+					if(miCafetera.servirMilo(cantidad)){
+						cout<<"Se sirvio Milo con las medidas correctas."<<endl;
+					}else{
+						cout<<"Se sirvio Milo con las medidas incorrectas debido a escasez de producto."<<endl;
+					}
+				}
+				system("pause");
+			break;
+			case 2:
+				system("cls");
+				miCafetera.llenarAgua();
+				cout<<"Agua llenada. CantidadActual = "<<miCafetera.getCantidadActualAgua()<<endl;
+				system("pause");
+			break;
+			case 3:
+				system("cls");
+				miCafetera.llenarLeche();
+				cout<<"Leche llenada. CantidadActual = "<<miCafetera.getCantidadActualLeche()<<endl;
+				system("pause");
+			break;
+			case 4:
+				system("cls");
+				miCafetera.llenarCafe();
+				cout<<"Cafe llenado. CantidadActual = "<<miCafetera.getCantidadActualCafe()<<endl;
+				system("pause");
+			break;
+			case 5:
+				system("cls");
+				miCafetera.llenarMilo();
+				cout<<"Milo llenado. CantidadActual = "<<miCafetera.getCantidadActualMilo()<<endl;
+				system("pause");
+			break;
+
 		}
-		cout<<"Ventas totales: "<<ventas<<endl<<endl;
-	    cout<<"Depositos:"<<endl;
-	    cout<<"Agua: "<<producto.getAgua()<<endl;
-	    cout<<"Leche: "<<producto.getLeche()<<endl;
-	    cout<<"Cafe: "<<producto.getCafe()<<endl;
-	    cout<<"Milo: "<<producto.getMilo()<<endl; 
-	    producto.dibujarNivel();
-    	cout << "Haz click sobre la ventana grafica" << endl;
-    	waitForLeftMouseClick();
-    	cout<<"Desea llenar los tanques?:(Si(1)/No(0)) ";
-    	cin>>llenar;
-    	if(llenar==1){
-    		producto.llenarAgua();
-    		producto.llenarCafe();
-    		producto.llenarLeche();
-    		producto.llenarMilo();
-    		producto.dibujarNivel();
-    		cout << "Haz click sobre la ventana grafica" << endl<<endl;
-    		waitForLeftMouseClick();
-		}
-		cout<<"Desea realizar otra compra?:(Si(1)/No(0)) ";
-		cin>>otro;
-		if (otro == 0)
-			seguir = false;
+		miCafetera.dibujarNivel();
+        cout << "Haz click sobre la ventana grafica" << endl<<endl;
+        waitForLeftMouseClick();
 	}
 	closegraph();
 	return 0;
@@ -114,5 +120,3 @@ void waitForLeftMouseClick()
         delay(DELAY);
     getmouseclick(WM_LBUTTONDOWN, x, y);
 }
-
-
